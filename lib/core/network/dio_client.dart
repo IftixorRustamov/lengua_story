@@ -1,30 +1,38 @@
 import 'dart:developer';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:lingua_story/core/common/constants/strings/api_urls.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioClient {
   late final Dio _dio;
 
   DioClient() {
-    _dio = Dio();
+    _dio = Dio(
+      BaseOptions(
+        baseUrl: ApiUrls.baseUrl,
+        connectTimeout: const Duration(milliseconds: 15000),
+        receiveTimeout: const Duration(milliseconds: 15000),
+        responseType: ResponseType.json,
+        // contentType: "application/json",
+        headers: {
+          'Content-Type': 'application/json',
+          // HttpHeaders.authorizationHeader: 'Bearer ${AppConstants.apiToken}', // token
+        },
+      ),
+    );
 
-    _dio
-      // ..options.baseUrl = AppConstants.baseUrl
-      ..options.headers = {
-        HttpHeaders.contentTypeHeader: ContentType.json.mimeType,
-        // HttpHeaders.authorizationHeader: 'Bearer ${AppConstants.apiToken}',
-      }
-      ..options.connectTimeout = const Duration(milliseconds: 15000)
-      ..options.receiveTimeout = const Duration(milliseconds: 15000)
-      ..options.responseType = ResponseType.json
-      ..interceptors.add(
-        PrettyDioLogger(
-          compact: false,
-          logPrint: (object) => log(object.toString(), name: 'TMDB API'),
-        ),
-      );
+    _dio.interceptors.addAll([
+      // LoggerInterceptor(),
+      PrettyDioLogger(
+        compact: false,
+        requestHeader: true,
+        requestBody: true,
+        responseBody: true,
+        error: true,
+        logPrint: (object) => log(object.toString(), name: 'KURSOL API'),
+      ),
+    ]);
   }
 
   // GET
@@ -38,9 +46,7 @@ class DioClient {
     try {
       final response = await _dio.get(
         url,
-        queryParameters: {
-          // "api_key" : AppConstants.apiToken
-        },
+        queryParameters: queryParameters,
         options: options,
         cancelToken: cancelToken,
         onReceiveProgress: onReceiveProgress,
@@ -90,13 +96,15 @@ class DioClient {
     ProgressCallback? onReceiveProgress,
   }) async {
     try {
-      final response = await _dio.post(uri,
-          queryParameters: queryParameters,
-          options: options,
-          data: data,
-          cancelToken: cancelToken,
-          onReceiveProgress: onReceiveProgress,
-          onSendProgress: onSendProgress);
+      final response = await _dio.post(
+        uri,
+        queryParameters: queryParameters,
+        options: options,
+        data: data,
+        cancelToken: cancelToken,
+        onReceiveProgress: onReceiveProgress,
+        onSendProgress: onSendProgress,
+      );
       return response;
     } on DioException {
       rethrow;

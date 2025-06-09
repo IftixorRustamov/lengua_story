@@ -4,7 +4,7 @@ import 'package:lingua_story/core/common/constants/strings/app_strings.dart';
 import 'package:lingua_story/core/common/constants/styles/textstyles/jost_textstyle.dart';
 import 'package:lingua_story/core/routes/app_router.dart';
 import 'package:lingua_story/core/utils/app_responsive.dart';
-import 'package:lingua_story/features/auth/presentation/screens/sign_in/sign_in_screen.dart';
+import 'package:lingua_story/features/auth/presentation/screens/sign_in_screen.dart';
 import 'package:lingua_story/service_locator.dart';
 
 class SplashScreen extends StatelessWidget {

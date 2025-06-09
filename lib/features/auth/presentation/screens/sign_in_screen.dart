@@ -7,7 +7,7 @@ import 'package:lingua_story/core/common/constants/styles/textstyles/jost_textst
 import 'package:lingua_story/core/common/constants/styles/textstyles/mulish_textstyle.dart';
 import 'package:lingua_story/core/routes/app_router.dart';
 import 'package:lingua_story/core/utils/app_responsive.dart';
-import 'package:lingua_story/features/auth/presentation/screens/select_your_level/select_your_level_screen.dart';
+import 'package:lingua_story/features/auth/presentation/screens/select_your_level_screen.dart';
 import 'package:lingua_story/features/auth/presentation/widgets/auth_check_box_wg.dart';
 import 'package:lingua_story/features/auth/presentation/widgets/auth_sign_in_card_wg.dart';
 import 'package:lingua_story/service_locator.dart';

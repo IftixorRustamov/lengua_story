@@ -7,7 +7,6 @@ import 'package:lingua_story/core/utils/app_responsive.dart';
 import 'package:lingua_story/features/testing/presentation/widgets/answer_option_button.dart';
 import 'package:lingua_story/service_locator.dart';
 
-import '../../data/dummy_data.dart';
 
 class TestTrueFalseScreen extends StatelessWidget {
   const TestTrueFalseScreen({super.key});

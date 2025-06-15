@@ -9,8 +9,9 @@ import 'package:lingua_story/core/enums/levels_enum.dart';
 import 'package:lingua_story/core/routes/app_router.dart';
 import 'package:lingua_story/core/utils/app_responsive.dart';
 import 'package:lingua_story/features/auth/presentation/widgets/radio_option_wg.dart';
-import 'package:lingua_story/features/testing/presentation/screens/diagnostic_test/diagnostic_test_screen.dart';
 import 'package:lingua_story/service_locator.dart';
+
+import '../../../by_interets/presentation/screens/interests_screen.dart';
 
 class SelectYourLevelScreen extends StatefulWidget {
   const SelectYourLevelScreen({super.key});
@@ -26,7 +27,10 @@ class _SelectYourLevelScreenState extends State<SelectYourLevelScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      appBar: ActionAppBarWg(onBackPressed: () {}),
+      appBar: ActionAppBarWg(
+          onBackPressed: () {
+        Navigator.pop(context);
+      }),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: appW(20), vertical: appH(16)),
         child: Column(
@@ -34,7 +38,7 @@ class _SelectYourLevelScreenState extends State<SelectYourLevelScreen> {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
-              spacing: appH(20),
+              spacing: appH(16),
               children: [
                 Text(
                   AppStrings.selectYourLevel,
@@ -46,9 +50,9 @@ class _SelectYourLevelScreenState extends State<SelectYourLevelScreen> {
                 Text(
                   AppStrings.selectYourLevelSubText,
                   textAlign: TextAlign.center,
-                  style: sl<MulishTextStyles>().bold(
-                    color: AppColors.textColor,
-                    fontSize: 11,
+                  style: sl<MulishTextStyles>().bold700(
+                    color: AppColors.black,
+                    fontSize: 12,
                   ),
                 ),
                 RadioOptionWg(
@@ -104,7 +108,7 @@ class _SelectYourLevelScreenState extends State<SelectYourLevelScreen> {
             DefaultButton(
               title: AppStrings.confirm,
               onPressed: () {
-                AppRouter.go(DiagnosticTestScreen());
+                AppRouter.go(InterestsScreen());
               },
             ),
           ],

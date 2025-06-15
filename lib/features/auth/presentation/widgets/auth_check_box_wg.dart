@@ -20,10 +20,10 @@ class AuthCheckboxWg extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Checkbox(
-          side: BorderSide(color: AppColors.orange, width: 2),
+          side: BorderSide(color: AppColors.primary, width: 2),
           checkColor: AppColors.white,
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-          activeColor: AppColors.orange,
+          activeColor: AppColors.primary,
           value: rememberMe,
           onChanged: onChanged,
         ),

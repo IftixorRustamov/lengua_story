@@ -1,4 +1,4 @@
-
+import '../entity/sign_in_entity.dart';
 import '../repository/auth_repo.dart';
 
 class SignInUseCase {
@@ -6,7 +6,13 @@ class SignInUseCase {
 
   SignInUseCase(this.repository);
 
-  Future<void> call({required String email, required String password}) {
-    return repository.signIn(email: email, password: password);
+  Future<SignInResponseEntity> call({
+    required String email,
+    required String password,
+  }) {
+    return repository.signIn(
+      email: email,
+      password: password,
+    );
   }
 }

@@ -12,7 +12,8 @@ abstract class AppStrings {
   static const String forgotPassword = "Parolni unutdingizmi?";
   static const String selectYourLevel = "Darajangizni tanlang";
   static const String selectYourLevelSubText =
-      "Ingliz tilidagi bilim darajangiz asosida darslarni moslashtiring";
+      "Ingliz tilidagi bilim darajangiz asosida darslarni "
+      "                 moslashtiring";
   static const String rememberMe = "Eslab qolish";
   static const String tizimgaKirishSubText =
       "Ingliz tili olamiga sayohatingiz shu yerdan boshlanadi!";
@@ -27,5 +28,30 @@ abstract class AppStrings {
   static const String keyingisi = "Keyingisi";
   static const String testlarSoniSub = "10 ta";
   static const String matchWords = "Match the words with their meanings";
+
+
+  static const String royxatdanOtish = "Ro’yxatdan o’tish...";
+  static const String royxatdanOtishSub = "Ro’yxatdan o’tish uchun email manzilingizni kiriting";
+  static const String davomEtish = "Davom etish";
+  static const String tasdiqlovchiKod = "Tasdiqlovchi kod yuborildi:";
+  static const String userGmail = " sa******yev@gmail.com:";
+  static const String kod = "Kod";
+  static const String time = " 02:00";
+
+  // info user
+  static const String username = "Username";
+  static const String tugilganSana = "Tug’ilgan sana";
+  static const String changePassword = "Parol o’rnatish";
+  static const String confirmPassword = "Parolni tasdiqlash";
+  static const String kelingQiziqishlarinzgizni = "Keling! qiziqishlaringizni tanlaymiz";
+  static const String choosingInterests1 = "Davom etish uchun quyidagilardan kamida ikkita";
+  static const String choosingInterests12 = "o’zingizga mosini tanlang";
+
+  static const String timeSaid = " daqiqada qayta yuboriladi";
+  static const String reg = "Ro‘yxatdan o‘tish jarayonini yakunlash uchun";
+  static const String reg2 = "          quyidagi ma’lumotlarni to‘ldiring";
+
+
+
 
 }

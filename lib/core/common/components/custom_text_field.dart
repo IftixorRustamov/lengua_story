@@ -12,6 +12,7 @@ class CustomTextFieldWg extends StatelessWidget {
   final VoidCallback? onTap;
   final Widget? trailingWidget;
   final bool obscureText;
+ final String? errorText;
 
   const CustomTextFieldWg({
     super.key,
@@ -20,44 +21,66 @@ class CustomTextFieldWg extends StatelessWidget {
     required this.hintText,
     this.onTap,
     this.trailingWidget,
+    this.errorText,
     this.obscureText = false,
   });
 
   @override
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      height: appH(50),
-      alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: appW(16)),
-      decoration: BoxDecoration(
-        color: AppColors.white,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(width: 1, color: AppColors.primary),
-      ),
-      child: TextField(
-        obscureText: obscureText,
-        keyboardType: TextInputType.text,
-        style: sl<MulishTextStyles>().bold(
-          color: AppColors.textColor,
-          fontSize: 14,
-        ),
-        controller: controller,
-        decoration: InputDecoration(
-          suffix: trailingWidget,
-          icon: Icon(
-            prefixIcon,
-            size: appH(20),
-            color: AppColors.textFieldTextColor,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          height: appH(50),
+          alignment: Alignment.center,
+          padding: EdgeInsets.symmetric(horizontal: appW(16)),
+          decoration: BoxDecoration(
+            color: AppColors.white,
+            borderRadius: BorderRadius.circular(12),
+            border: Border.all(
+              width: 1.4,
+              color: errorText != null ? Colors.red : AppColors.primary,
+            ),
           ),
-          hintText: hintText,
-          hintStyle: sl<MulishTextStyles>().bold(
-            color: AppColors.textFieldTextColor,
-            fontSize: 14,
+          child: TextField(
+            obscureText: obscureText,
+            keyboardType: TextInputType.text,
+            style: sl<MulishTextStyles>().bold(
+              color: AppColors.textColor,
+              fontSize: 14,
+            ),
+            controller: controller,
+            decoration: InputDecoration(
+              suffix: trailingWidget,
+              icon: Icon(
+                prefixIcon,
+                size: appH(20),
+                color: AppColors.textFieldTextColor,
+              ),
+              hintText: hintText,
+              hintStyle: sl<MulishTextStyles>().bold(
+                color: AppColors.textFieldTextColor,
+                fontSize: 14,
+              ),
+              border: InputBorder.none,
+            ),
+            onTap: onTap,
           ),
-          border: InputBorder.none,
         ),
-        onTap: onTap,
-      ),
+        if (errorText != null)
+          Padding(
+            padding: EdgeInsets.only(top: appH(6), left: appW(8)),
+            child: Text(
+              errorText!,
+              style: sl<MulishTextStyles>().bold(
+                color: Colors.red,
+                fontSize: 12,
+              ),
+            ),
+          ),
+      ],
     );
   }
+
 }

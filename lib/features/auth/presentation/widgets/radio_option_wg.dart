@@ -27,7 +27,7 @@ class RadioOptionWg extends StatelessWidget {
     final isSelected = groupValue == value;
 
     return Container(
-      padding: EdgeInsets.symmetric(vertical: appH(10), horizontal: appW(16)),
+      padding: EdgeInsets.symmetric(vertical: appH(18), horizontal: appW(16)),
       decoration: BoxDecoration(
         border: Border.all(
           color: isSelected ? AppColors.primary : AppColors.textFieldTextColor,
@@ -41,7 +41,7 @@ class RadioOptionWg extends StatelessWidget {
             value: value,
             groupValue: groupValue,
             onChanged: onChanged,
-            activeColor: Colors.blue,
+            activeColor: AppColors.primary,
           ),
           const SizedBox(width: 8),
           Expanded(
@@ -51,7 +51,7 @@ class RadioOptionWg extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: sl<JostTextStyles>().medium(
+                  style: sl<JostTextStyles>().semiBold(
                     color: isSelected ? AppColors.primary : AppColors.orange,
                     fontSize: 16,
                   ),

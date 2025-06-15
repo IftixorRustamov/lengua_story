@@ -12,6 +12,12 @@ class MulishTextStyles extends AppTextStyles {
     fontWeight: FontWeight.bold,
     fontFamily: AppFonts.mulish,
   );
+  TextStyle bold700({required Color color, required double fontSize}) => TextStyle(
+    fontSize: AppResponsive.height(fontSize),
+    color: color,
+    fontWeight: FontWeight.w700,
+    fontFamily: AppFonts.mulish,
+  );
 
   @override
   TextStyle semiBold({required Color color, required double fontSize}) =>

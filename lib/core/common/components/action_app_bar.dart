@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iconly/iconly.dart';
 import 'package:lingua_story/core/utils/app_responsive.dart';
 import 'package:lingua_story/service_locator.dart';
 
@@ -37,7 +38,7 @@ class ActionAppBarWg extends StatelessWidget implements PreferredSizeWidget {
       leading: IconButton(
         onPressed: onBackPressed,
         icon: Icon(
-          Icons.arrow_back_ios,
+          IconlyLight.arrow_left_2,
           size: appH(24),
           color: AppColors.black,
         ),

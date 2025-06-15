@@ -16,11 +16,21 @@ dependencies:
   pretty_dio_logger: ^1.4.0
   json_annotation: ^4.9.0
   equatable: ^2.0.7
+  pinput: ^3.0.1
+  bloc:
+  flutter_bloc: ^9.0.0
+  hive:
+  hive_flutter:
+  path_provider:
+  iconly: ^1.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^5.0.0
+  mask_text_input_formatter: ^2.9.0
+
+
 
 flutter:
   uses-material-design: true

@@ -10,7 +10,6 @@ import 'package:lingua_story/service_locator.dart';
 
 import '../../../../core/routes/app_router.dart';
 
-
 class TestTrueFalseScreen extends StatelessWidget {
   const TestTrueFalseScreen({super.key});
 
@@ -67,7 +66,6 @@ class TestTrueFalseScreen extends StatelessWidget {
             ),
             DefaultButton(title: AppStrings.keyingisi, onPressed: () {
               AppRouter.go(TestMatchingScreen());
-
             }),
           ],
         ),

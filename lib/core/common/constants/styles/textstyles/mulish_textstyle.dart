@@ -38,7 +38,7 @@ class MulishTextStyles extends AppTextStyles {
       );
 
   @override
-  TextStyle regular({required Color color, required double fontSize}) =>
+  TextStyle regular({required Color color, required double fontSize} ) =>
       TextStyle(
         fontSize: AppResponsive.height(fontSize),
         color: color,

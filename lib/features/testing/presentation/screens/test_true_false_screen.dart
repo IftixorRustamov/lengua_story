@@ -4,8 +4,11 @@ import 'package:lingua_story/core/common/constants/colors/app_colors.dart';
 import 'package:lingua_story/core/common/constants/strings/app_strings.dart';
 import 'package:lingua_story/core/common/constants/styles/textstyles/mulish_textstyle.dart';
 import 'package:lingua_story/core/utils/app_responsive.dart';
+import 'package:lingua_story/features/testing/presentation/screens/test_matching_screen.dart';
 import 'package:lingua_story/features/testing/presentation/widgets/answer_option_button.dart';
 import 'package:lingua_story/service_locator.dart';
+
+import '../../../../core/routes/app_router.dart';
 
 
 class TestTrueFalseScreen extends StatelessWidget {
@@ -62,7 +65,10 @@ class TestTrueFalseScreen extends StatelessWidget {
                 ],
               ),
             ),
-            DefaultButton(title: AppStrings.keyingisi, onPressed: () {}),
+            DefaultButton(title: AppStrings.keyingisi, onPressed: () {
+              AppRouter.go(TestMatchingScreen());
+
+            }),
           ],
         ),
       ),

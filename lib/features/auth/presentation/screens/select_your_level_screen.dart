@@ -11,7 +11,7 @@ import 'package:lingua_story/core/utils/app_responsive.dart';
 import 'package:lingua_story/features/auth/presentation/widgets/radio_option_wg.dart';
 import 'package:lingua_story/service_locator.dart';
 
-import '../../../by_interets/presentation/screens/interests_screen.dart';
+import '../../../testing/presentation/screens/interests_screen.dart';
 
 class SelectYourLevelScreen extends StatefulWidget {
   const SelectYourLevelScreen({super.key});

@@ -26,6 +26,7 @@ abstract class AppStrings {
   static const String daqiqa15 = "15 daqiqa";
   static const String testlarSoni = "Testlar soni";
   static const String keyingisi = "Keyingisi";
+  static const String test = "Test";
   static const String testlarSoniSub = "10 ta";
   static const String matchWords = "Match the words with their meanings";
 
@@ -50,6 +51,11 @@ abstract class AppStrings {
   static const String timeSaid = " daqiqada qayta yuboriladi";
   static const String reg = "Ro‘yxatdan o‘tish jarayonini yakunlash uchun";
   static const String reg2 = "          quyidagi ma’lumotlarni to‘ldiring";
+  static const String ready = "Agar tayyor bo’lsangiz ‘‘Boshlash’’ tugmasini bosing";
+
+  static const String historyName1 = "Bobby and the Magic Hat";
+
+
 
 
 

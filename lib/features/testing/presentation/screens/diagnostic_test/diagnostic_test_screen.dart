@@ -6,7 +6,12 @@ import 'package:lingua_story/core/common/constants/strings/app_strings.dart';
 import 'package:lingua_story/core/common/constants/styles/textstyles/jost_textstyle.dart';
 import 'package:lingua_story/core/common/constants/styles/textstyles/mulish_textstyle.dart';
 import 'package:lingua_story/core/utils/app_responsive.dart';
+import 'package:lingua_story/features/testing/presentation/screens/history_screen.dart';
 import 'package:lingua_story/service_locator.dart';
+
+import '../../../../../core/routes/app_router.dart';
+import '../test_matching_screen.dart';
+import '../test_true_false_screen.dart';
 
 class DiagnosticTestScreen extends StatelessWidget {
   const DiagnosticTestScreen({super.key});
@@ -15,14 +20,16 @@ class DiagnosticTestScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.white,
-      appBar: ActionAppBarWg(onBackPressed: () {}),
+      appBar: ActionAppBarWg(onBackPressed: () {
+        Navigator.pop(context);
+      }),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: appW(20), vertical: appH(16)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
-              spacing: appH(20),
+              spacing: appH(14),
               children: [
                 Image.asset("assets/images/test_note.png"),
                 Column(
@@ -79,7 +86,11 @@ class DiagnosticTestScreen extends StatelessWidget {
                 ),
               ],
             ),
-            DefaultButton(title: AppStrings.boshlash, onPressed: () {}),
+            DefaultButton(title: AppStrings.boshlash, onPressed: () {
+              AppRouter.go(
+                  HistoryScreen()
+              );
+            }),
           ],
         ),
       ),
@@ -110,12 +121,12 @@ Widget _customRow({
         Text(
           title,
           style: sl<MulishTextStyles>().bold(
-            color: AppColors.primary,
+            color: AppColors.orange,
             fontSize: 18,
           ),
         ),
         Text(
-          AppStrings.ortacha,
+          subText,
           style: sl<MulishTextStyles>().bold(
             color: AppColors.textFieldTextColor,
             fontSize: 14,
